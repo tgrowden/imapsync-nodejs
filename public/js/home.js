@@ -32,11 +32,10 @@
           args: otherArgs
         }
       };
-      console.log("Email = " + JSON.stringify(Email));
       socket.emit('message', Email);
     });
     socket.on('log', function(output) {
-      $('#logBody').append($('<span>').text(output));
+      $('#logBody').append($('<div style="padding-top: 10px;">').text(output));
     });
     socket.on('status', function(status){
       if (status == 'working'){
