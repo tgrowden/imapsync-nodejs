@@ -8,7 +8,9 @@ var bodyParser = require('body-parser');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var spawn = require("child_process").spawn;
-var imapsync = require("./config/config").bin;
+var config = require("./config/config");
+var imapsync = config.bin;
+var Port = config.port;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -106,6 +108,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-http.listen(3000, function() {
-  console.log('listening on *:3000');
+http.listen(Port, function() {
+  console.log('listening on *:' + Port);
 });
