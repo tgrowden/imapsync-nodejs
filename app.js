@@ -70,8 +70,11 @@ io.on('connection', function(socket) {
     };
     var handleMessage = function(error, data) {
       console.log(error ? "Error" : "Data", error || data);
+      io.emit('status', 'working');
+      io.emit('log', data);
     };
     var finishProcess = function(data) {
+      io.emit('status', 'finished');
       console.log("Process finished", data);
     };
     // this will inherit the parent process' current working directory and environment variables
@@ -79,7 +82,7 @@ io.on('connection', function(socket) {
       cwd: process.cwd(),
       env: process.env
     });
-    io.emit('log', Email);
+    //io.emit('log', Email);
     console.log("Email received: " + JSON.stringify(Email));
   });
 });

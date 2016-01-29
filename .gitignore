@@ -2,3 +2,4 @@ public/components
 node_modules
 public/js/fill-in.js
 LOG_imapsync
+npm-debug.log

@@ -36,7 +36,17 @@
       socket.emit('message', Email);
     });
     socket.on('log', function(output) {
-      $('#logBody').append($('<span>').text(JSON.stringify(output)));
+      $('#logBody').append($('<span>').text(output));
+    });
+    socket.on('status', function(status){
+      if (status == 'working'){
+        $('#status').addClass('label-primary');
+        $('#status').text('Working...');
+      } else if (status == "finished") {
+        $('#status').removeClass('label-primary');
+        $('#status').addClass('label-success');
+        $('#status').text('Finished!');
+      }
     });
   });
 }());
