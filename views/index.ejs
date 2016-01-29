@@ -1,0 +1,126 @@
+<% include ./partials/head %>
+<div class="container">
+  <h1><%=title %></h1>
+<!--    <form id="details" role="form" method="POST" action="/move"> -->
+<!-- Modal -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal">Open Modal</button>
+    <div id="modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Imapsync Status</h4>
+          </div>
+          <div class="modal-body" id="logBody">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="details" role="form" action="">
+      <div class="col-md-6" id="from">
+        <h3>From</h3>
+
+        <div class="form-group row">
+          <label for="fromEmail" class="col-sm-2 form-control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="fromEmail" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="fromPassword" class="col-sm-2 form-control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="fromPassword" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="fromHost" class="col-sm-2 form-control-label">Host</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="fromHost" placeholder="Host">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10 col-sm-offset-2">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="fromSSL"> Use SSL?
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" id="to">
+        <h3>To</h3>
+
+        <div class="form-group row">
+          <label for="toEmail" class="col-sm-2 form-control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="toEmail" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="toPassword" class="col-sm-2 form-control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="toPassword" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="toHost" class="col-sm-2 form-control-label">Host</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="toHost" placeholder="Host">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10 col-sm-offset-2">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="toSSL"> Use SSL?
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <label for="otherArgs" class="col-sm-12 form-control-label text-center">Other Command Line Arguments</label>
+          <input type="text" class="form-control" id="otherArgs" placeholder="--domain1 foo.bar.com --port1 42">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12 text-center">
+          <button id="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12 text-center">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="dryrun"> Dry Run?
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </form>
+</div>
+<!-- /container -->
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="/js/home.js"></script>
+
+
+<script src="/js/fill-in.js"></script>
+
+<% include ./partials/footer %>

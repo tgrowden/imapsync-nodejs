@@ -1,0 +1,30 @@
+{
+  "name": "imapsync-nodejs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "imapsync",
+    "imap",
+    "email",
+    "migration"
+  ],
+  "author": "Taylor Growden",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "childprocess": "^2.0.0",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "morgan": "^1.6.1",
+    "path": "^0.12.7",
+    "socket.io": "^1.4.5",
+    "static-favicon": "^2.0.0-alpha"
+  }
+}

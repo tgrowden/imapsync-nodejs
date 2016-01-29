@@ -1,0 +1,40 @@
+<% include ./partials/head %>
+  <div class="header">
+
+    <h3 class="text-muted">IMAP-COPY</h3>
+  </div>
+
+  <div class="jumbotron">
+    <%
+    logger.forEach(function(log) {
+    %>
+    <div>
+      <%= log %>
+    </div>
+    <%
+      });
+      if (active == true) {
+      %>
+        <span class="label label-primary">Working</span>
+      <%
+      } else {
+      %>
+        <span class="label label-success">Finished</span>
+      <%
+      }
+      %>
+
+  </div>
+
+  </div>
+  <!-- /container -->
+
+  <% if (active == true) { %>
+    <script>
+      /* filthy hack i know! */
+      setTimeout(function() {
+        window.location.reload();
+      }, 5000);
+    </script>
+    <% } %>
+<% include ./partials/footer %>
