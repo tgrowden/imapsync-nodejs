@@ -19,6 +19,6 @@ These instructions assume that you are working on Linux. This will probably also
 4. `$ bower install`
 5. `$ grunt`
 6. Edit `config/config.js` to point to imapsync location (default is `/usr/bin/imapsync`)
-  * If you don't already have imapsync installed, you can run `$ git submodule update` and use the absolute path of `./imapsync/imapsync`
+  * If you don't already have imapsync installed, you can use the submodule located at `./imapsync/imapsync`; just update the config with the absolute path.
 6. `$ npm start`
 7. Check it out: [http://localhost:3000](http://localhost:3000)
