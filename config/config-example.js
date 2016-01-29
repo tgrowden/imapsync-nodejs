@@ -1,4 +1,4 @@
 module.exports = {
   'bin': '/usr/bin/imapsync',
-  'port': 3456
+  'port': 3000
 };
