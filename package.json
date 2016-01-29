@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "grunt-contrib-copy": "^0.8.2",
     "http": "0.0.0",
     "morgan": "^1.6.1",
     "path": "^0.12.7",
