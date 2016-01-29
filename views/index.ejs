@@ -26,21 +26,21 @@
         <div class="form-group row">
           <label for="fromEmail" class="col-sm-2 form-control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="fromEmail" placeholder="Email">
+            <input type="email" class="form-control" id="fromEmail" placeholder="Email" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="fromPassword" class="col-sm-2 form-control-label">Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="fromPassword" placeholder="Password">
+            <input type="password" class="form-control" id="fromPassword" placeholder="Password" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="fromHost" class="col-sm-2 form-control-label">Host</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="fromHost" placeholder="Host">
+            <input type="text" class="form-control" id="fromHost" placeholder="Host" required>
           </div>
         </div>
 
@@ -61,21 +61,21 @@
         <div class="form-group row">
           <label for="toEmail" class="col-sm-2 form-control-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="toEmail" placeholder="Email">
+            <input type="email" class="form-control" id="toEmail" placeholder="Email" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="toPassword" class="col-sm-2 form-control-label">Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="toPassword" placeholder="Password">
+            <input type="password" class="form-control" id="toPassword" placeholder="Password" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="toHost" class="col-sm-2 form-control-label">Host</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="toHost" placeholder="Host">
+            <input type="text" class="form-control" id="toHost" placeholder="Host" required>
           </div>
         </div>
 
@@ -93,7 +93,7 @@
       <div class="form-group row">
         <div class="col-sm-10 col-sm-offset-1">
           <label for="otherArgs" class="col-sm-12 form-control-label text-center">Other Command Line Arguments</label>
-          <input type="text" class="form-control" id="otherArgs" placeholder="--domain1 foo.bar.com --port1 42">
+          <input type="text" class="form-control .typeahead" id="otherArgs" placeholder="--domain1 foo.bar.com --port1 42">
         </div>
       </div>
 
@@ -116,10 +116,5 @@
     </form>
 </div>
 <!-- /container -->
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="/js/home.js"></script>
-
-
-<script src="/js/fill-in.js"></script>
 
 <% include ./partials/footer %>
