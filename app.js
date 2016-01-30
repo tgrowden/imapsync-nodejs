@@ -71,7 +71,7 @@ io.on('connection', function(socket) {
       }
     };
     var handleMessage = function(error, data) {
-      console.log(error ? "Error" : "Data", error || data);
+      //console.log(error ? "Error" : "Data", error || data);
 
       if (data) {
         io.emit('status', 'working');
