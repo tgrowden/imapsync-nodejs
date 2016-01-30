@@ -12,3 +12,7 @@ a {
     max-height: 420px;
     overflow-y: auto;
 }
+#status {
+  float: right;
+  margin-right: 3rem;
+}
