@@ -13,6 +13,7 @@
         otherArgs = false;
       }
       $('#modal').modal('show');
+      $('#error-status').hide();
 
       var Email = {
         from: {
@@ -37,14 +38,21 @@
     socket.on('log', function(output) {
       $('#logBody').append($('<div style="padding-top: 10px;">').text(output));
     });
+    socket.on('log-error', function(error) {
+      $('#logBody').append($('<div style="padding-top: 10px; color: red;">').text(error));
+    });
     socket.on('status', function(status){
       if (status == 'working'){
+        $('#status').removeClass('label-success');
         $('#status').addClass('label-primary');
         $('#status').text('Working...');
       } else if (status == "finished") {
         $('#status').removeClass('label-primary');
         $('#status').addClass('label-success');
         $('#status').text('Finished!');
+      }
+      if (status == 'error') {
+        $('#error-status').show();
       }
     });
   });
