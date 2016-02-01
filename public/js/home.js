@@ -55,5 +55,9 @@
         $('#error-status').show();
       }
     });
+    $('#modal').on('hidden.bs.modal', function () {
+      $('form').trigger('reset');
+      $('#logBody').text("");
+    });
   });
 }());
