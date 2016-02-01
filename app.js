@@ -21,6 +21,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//check if user wants authentication enabled
+if (config.auth.required === true) {
+  var auth = require('http-auth');
+  var basic = auth.basic({
+    realm: "Authentication Required",
+    file: __dirname + "/users.htpasswd"
+  });
+  app.use(auth.connect(basic));
+}
+
 app.get('/', function(req, res) {
   res.render('index', {
     title: 'Imapsync Nodejs'
@@ -113,6 +124,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 http.listen(Port, function() {
   console.log('listening on *:' + Port);
 });
