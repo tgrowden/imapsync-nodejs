@@ -5,3 +5,4 @@ LOG_imapsync
 npm-debug.log
 config/config.js
 users.htpasswd
+imapsync
