@@ -36,10 +36,14 @@
       socket.emit('message', Email);
     });
     socket.on('log', function(output) {
+//TODO work on formatting
+      //var Error = error.split(/\n/);
       $('#logBody').append($('<div style="padding-top: 10px;">').text(output));
+      $('#logBody').scrollTop($('#logBody')[0].scrollHeight);
     });
     socket.on('log-error', function(error) {
       $('#logBody').append($('<div style="padding-top: 10px; color: red;">').text(error));
+      $('#logBody').scrollTop($('#logBody')[0].scrollHeight);
     });
     socket.on('status', function(status){
       if (status == 'working'){
